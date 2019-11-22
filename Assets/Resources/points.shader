@@ -33,8 +33,8 @@
 			v2f vert (uint id : SV_VertexID, uint inst : SV_InstanceID)
 			{
 				v2f o;
-				float3 pos   = _ParticleDataBuff[inst];
-
+				float3 pos     = _ParticleDataBuff[inst];
+				float  inCicle = _ParticleDataBuff[inst].w;
 				//pos.xy = float2(rand(inst + _frameCount) , rand(inst + 11.+ _frameCount))*2. -1.;
 
 				float3 right = float3(1, 0, 0);
@@ -48,7 +48,7 @@
 				};
 
 				pos     += -up*size*sin60*0.5;
-				o.color  = lerp( float3(1., 0., 0.), float3(0., 1., 0.), step(1.0, length(pos.xy)));
+				o.color  = lerp( float3(1., 0., 0.), float3(0., 1., 0.), inCicle);
 				o.vertex = float4(pos, 1.);
 				
 				return o;
