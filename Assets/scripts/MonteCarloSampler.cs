@@ -78,13 +78,14 @@ public class MonteCarloSampler : MonoBehaviour {
             
         }
 
-        EstmatedPI = (float)samplesOut/(float)samplesIn;
+    
 
         computerBufferpoints.SetData(points);
     }
 
 	// Update is called once per frame
 	void Update () {
+        
 
         Resample();
         Graphics.SetRenderTarget(screenTexture);
@@ -97,6 +98,7 @@ public class MonteCarloSampler : MonoBehaviour {
         nSamples += numberOfSamplesPerPass;
         error     = PI - EstmatedPI;
 
+        EstmatedPI = 4f* (float)samplesIn / ((float)samplesOut+ (float)samplesIn) ;
         PIValueT.text = "Est. PI value: " + EstmatedPI;
         ErrorT.text   = "Error: "             + error;
         NSamplesT.text= "N samples: "         + nSamples;
