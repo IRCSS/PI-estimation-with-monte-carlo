@@ -1,9 +1,9 @@
-Texture painting in Unity using shaders
+PI value estimation with monte carlo sampling
 =================
 
-This repo contains a setup to render directly in the texture of a mesh. The code renders the mesh using commandbuffer in the uv space of the mesh's texture. For more have a look at the blog post: https://medium.com/@shahriyarshahrabi/mesh-texture-painting-in-unity-using-shaders-8eb7fc31221c
+This repo contains the code for estimating the value of PI using the Monte Carlo sampling method. 
 
-![screenshot](https://i.imgur.com/cAA22EW.gif)
+![screenshot](https://media.giphy.com/media/UsNXB1QDclKpesblDJ/giphy.gif)
 
 Known Issues
 =================
